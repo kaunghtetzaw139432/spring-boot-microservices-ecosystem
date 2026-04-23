@@ -1,0 +1,37 @@
+# --- Java & Build Tools ---
+target/
+!.mvn/wrapper/maven-wrapper.jar
+build/
+.gradle/
+bin/
+
+# --- IDE Specific ---
+.idea/
+*.iml
+*.iws
+.settings/
+.classpath
+.project
+.factorypath
+.vscode/
+
+# --- Operating System ---
+.DS_Store
+Thumbs.db
+
+# --- Database & Docker ---
+*.db
+*.log
+docker/data/
+mysql-data/
+postgres-data/
+
+# --- Microservices Specific ---
+**/target/
+**/build/
+.recommenders/
+
+# --- Secrets & Environment ---
+.env
+*.pem
+*.jks

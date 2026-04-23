@@ -1,0 +1,21 @@
+# Stage 1: Extraction stage
+FROM eclipse-temurin:21-jre-alpine AS builder
+# Warning ပျောက်အောင် /extracted (Absolute Path) လို့ ပြောင်းလိုက်တယ်
+WORKDIR /extracted
+ADD target/*.jar app.jar
+RUN java -Djarmode=layertools -jar app.jar extract
+
+# Stage 2: Final runtime stage
+FROM eclipse-temurin:21-jre-alpine
+# Warning ပျောက်အောင် /application လို့ ပြောင်းလိုက်တယ်
+WORKDIR /application
+
+# Builder stage ထဲက path တွေကိုလည်း /extracted/... လို့ အတိအကျ ပြန်ညွှန်းမယ်
+COPY --from=builder /extracted/dependencies/ ./
+COPY --from=builder /extracted/spring-boot-loader/ ./
+COPY --from=builder /extracted/snapshot-dependencies/ ./
+COPY --from=builder /extracted/application/ ./
+
+EXPOSE 8080
+
+ENTRYPOINT ["java", "org.springframework.boot.loader.launch.JarLauncher"]
