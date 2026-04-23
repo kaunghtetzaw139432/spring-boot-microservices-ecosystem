@@ -14,10 +14,42 @@
 ## 📝 Project Overview
 This repository contains a full-scale **Microservices Architecture** developed using **Java Spring Boot**. The project demonstrates a production-ready ecosystem focusing on distributed systems, event-driven communication, and centralized security.
 
-### 🏗 Architecture Design
+---
+
+## 🏗 System Architecture
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/4dc3e26d-e695-4071-8afc-22fbb9e300c8" width="800" alt="Architecture Diagram">
+  <img src="https://github.com/user-attachments/assets/4dc3e26d-e695-4071-8afc-22fbb9e300c8" width="100%" alt="Architecture Diagram">
 </p>
+
+---
+
+## 🛠 Tech Stack
+
+| Category | Technology |
+| :--- | :--- |
+| **Backend** | Java 17, Spring Boot 3.x, Spring Cloud |
+| **Security** | Keycloak (OIDC/OAuth2), Spring Security |
+| **Messaging** | Apache Kafka, Zookeeper |
+| **Database** | MySQL (Relational), MongoDB (NoSQL) |
+| **Discovery** | Netflix Eureka Server |
+| **Tracing** | Zipkin, Micrometer |
+| **DevOps** | Docker, Docker Compose |
+
+---
+
+## 📂 Project Structure
+
+```text
+.
+├── api-gateway/          # Central entry point & Auth filter
+├── discovery-server/     # Eureka Service Discovery
+├── auth-service/         # Identity Provider (Keycloak integration)
+├── product-service/      # Product management (MongoDB)
+├── order-service/        # Order processing (MySQL)
+├── inventory-service/    # Stock management (MySQL)
+├── notification-service/ # Async notifications via Kafka
+├── docker-compose.yml    # Infrastructure orchestration
+└── pom.xml               # Parent dependencies
 
 ---
 
@@ -26,20 +58,28 @@ This repository contains a full-scale **Microservices Architecture** developed u
 ### 1. Service Discovery (Eureka)
 All services are registered and managed via Netflix Eureka Server.
 <p align="center">
-  <img src="https://raw.githubusercontent.com/kaunghtetzaw139432/spring-boot-microservices-ecosystem/main/images/eureka.png" width="800" alt="Eureka Dashboard">
+  <img src="https://github.com/user-attachments/assets/46233c70-6195-4aad-854d-e47300a32aca"  width="800" alt="Eureka Dashboard">
 </p>
 
 ### 2. Identity Management (Keycloak)
 Centralized Authentication and Authorization using Keycloak OAuth2.
 <p align="center">
-  <img src="https://raw.githubusercontent.com/kaunghtetzaw139432/spring-boot-microservices-ecosystem/main/images/keycloak.jpg" width="600" alt="Keycloak Login">
+  <img src="https://github.com/user-attachments/assets/56ba7512-d920-4061-9b44-ce8c01972df0" width="600" alt="Keycloak Login">
 </p>
 
-### 3. API Testing & Verification
-Verified successful transactions (Order creation and Product retrieval) via API Gateway.
+### 🧪 3. API Testing & Verification
+
+Verified successful transactions (Authentication, Order creation, and Product retrieval) via API Gateway.
+
 <p align="center">
-  <img src="https://raw.githubusercontent.com/kaunghtetzaw139432/spring-boot-microservices-ecosystem/main/images/api_result.png" width="800" alt="API Testing">
+  <img src="https://github.com/user-attachments/assets/56036a4c-2a57-43ee-b5ca-58d2d5224e4d" width="45%" alt="Auth Result">
+  <img src="https://github.com/user-attachments/assets/fa575985-5d93-43fd-8ef2-6fceeaad9ea0" width="45%" alt="Order Success">
 </p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/34fcf0c9-3820-4fc1-9400-47e9c05a5ced" width="80%" alt="Product List">
+</p>
+
 
 ---
 
@@ -54,25 +94,23 @@ docker run -d --name keycloak \
   -e KC_BOOTSTRAP_ADMIN_USERNAME=admin \
   -e KC_BOOTSTRAP_ADMIN_PASSWORD=admin \
   quay.io/keycloak/keycloak:26.1.1 start-dev
-
-Tracing (Zipkin)
+📊 Tracing (Zipkin)
 docker run -d -p 9411:9411 --name zipkin openzipkin/zipkin
-
 🔒 Security & Hardening
-.Eureka Security: Discovery server protected with Basic Authentication.
+Eureka Security: Discovery server protected with Basic Authentication.
 
-.JWT Validation: API Gateway acts as an OAuth2 Resource Server.
-
+JWT Validation: API Gateway acts as an OAuth2 Resource Server, validating tokens against Keycloak.
 📈 Learning Roadmap
-.[x] Service Discovery: Netflix Eureka integration.
+[x] Service Discovery: Netflix Eureka integration.
 
-.[x] API Gateway: Routing & Security.
+[x] API Gateway: Routing & Security.
 
-.[x] Messaging: Asynchronous communication with Kafka.
+[x] Messaging: Asynchronous communication with Kafka.
 
-.[x] Tracing: Observability with Zipkin.
+[x] Tracing: Observability with Zipkin.
 
-.[ ] Containerization: Full Docker integration.
+[ ] Containerization: Full Docker integration.
 
-.[ ] Resilience: Circuit Breakers with Resilience4j.
+[ ] Resilience: Circuit Breakers with Resilience4j.
+
 <h3 align="center">🤝 Developed with ❤️ by Kaung Htet Zaw</h3>
