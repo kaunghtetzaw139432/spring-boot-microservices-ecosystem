@@ -16,7 +16,7 @@ This repository contains a full-scale **Microservices Architecture** developed u
 
 ### 🏗 Architecture Design
 <p align="center">
-  <img src="https://raw.githubusercontent.com/kaunghtetzaw139432/spring-boot-microservices-ecosystem/main/images/architecture.jpg" width="800" alt="Architecture Diagram">
+  <img src="https://github.com/user-attachments/assets/4dc3e26d-e695-4071-8afc-22fbb9e300c8" width="800" alt="Architecture Diagram">
 </p>
 
 ---
