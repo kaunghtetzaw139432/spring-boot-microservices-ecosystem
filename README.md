@@ -58,13 +58,13 @@ This repository contains a full-scale **Microservices Architecture** developed u
 ### 1. Service Discovery (Eureka)
 All services are registered and managed via Netflix Eureka Server.
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/56ba7512-d920-4061-9b44-ce8c01972df0"  width="800" alt="Eureka Dashboard">
+  <img src="https://github.com/user-attachments/assets/46233c70-6195-4aad-854d-e47300a32aca" width="800" alt="Eureka Dashboard">
 </p>
 
 ### 2. Identity Management (Keycloak)
 Centralized Authentication and Authorization using Keycloak OAuth2.
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/4dc3e26d-e695-4071-8afc-22fbb9e300c8" width="600" alt="Keycloak Login">
+  <img  src="https://github.com/user-attachments/assets/56ba7512-d920-4061-9b44-ce8c01972df0" width="600" alt="Keycloak Login">
 </p>
 
 ### 🧪 3. API Testing & Verification
