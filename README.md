@@ -49,8 +49,8 @@ This repository contains a full-scale **Microservices Architecture** developed u
 ├── inventory-service/    # Stock management (MySQL)
 ├── notification-service/ # Async notifications via Kafka
 ├── docker-compose.yml    # Infrastructure orchestration
-└── pom.xml               # Parent dependencies
-
+└── pom.xml               # Parent dependencies 
+```
 ---
 
 ## 🏗 Key Components & Monitoring
@@ -58,13 +58,13 @@ This repository contains a full-scale **Microservices Architecture** developed u
 ### 1. Service Discovery (Eureka)
 All services are registered and managed via Netflix Eureka Server.
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/46233c70-6195-4aad-854d-e47300a32aca"  width="800" alt="Eureka Dashboard">
+  <img src="https://github.com/user-attachments/assets/56ba7512-d920-4061-9b44-ce8c01972df0"  width="800" alt="Eureka Dashboard">
 </p>
 
 ### 2. Identity Management (Keycloak)
 Centralized Authentication and Authorization using Keycloak OAuth2.
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/56ba7512-d920-4061-9b44-ce8c01972df0" width="600" alt="Keycloak Login">
+  <img src="https://github.com/user-attachments/assets/4dc3e26d-e695-4071-8afc-22fbb9e300c8" width="600" alt="Keycloak Login">
 </p>
 
 ### 🧪 3. API Testing & Verification
@@ -72,12 +72,12 @@ Centralized Authentication and Authorization using Keycloak OAuth2.
 Verified successful transactions (Authentication, Order creation, and Product retrieval) via API Gateway.
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/56036a4c-2a57-43ee-b5ca-58d2d5224e4d" width="45%" alt="Auth Result">
+  <img src="https://github.com/user-attachments/assets/813e35dd-59f0-4a1a-be0b-84bbbad92496" width="45%" alt="Auth Result">
   <img src="https://github.com/user-attachments/assets/fa575985-5d93-43fd-8ef2-6fceeaad9ea0" width="45%" alt="Order Success">
 </p>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/34fcf0c9-3820-4fc1-9400-47e9c05a5ced" width="80%" alt="Product List">
+  <img src="https://github.com/user-attachments/assets/56036a4c-2a57-43ee-b5ca-58d2d5224e4d" width="80%" alt="Product List">
 </p>
 
 
@@ -94,7 +94,8 @@ docker run -d --name keycloak \
   -e KC_BOOTSTRAP_ADMIN_USERNAME=admin \
   -e KC_BOOTSTRAP_ADMIN_PASSWORD=admin \
   quay.io/keycloak/keycloak:26.1.1 start-dev
-📊 Tracing (Zipkin)
+```
+### 📊 Tracing (Zipkin)
 docker run -d -p 9411:9411 --name zipkin openzipkin/zipkin
 🔒 Security & Hardening
 Eureka Security: Discovery server protected with Basic Authentication.
