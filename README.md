@@ -88,7 +88,7 @@ Verified successful transactions (Authentication, Order creation, and Product re
 ### 📡 Kafka & Zookeeper
 ```bash
 docker-compose up -d
-🔐 Keycloak Server
+ `🔐 Keycloak Server`
 docker run -d --name keycloak \
   -p 8080:8080 \
   -e KC_BOOTSTRAP_ADMIN_USERNAME=admin \
@@ -96,22 +96,22 @@ docker run -d --name keycloak \
   quay.io/keycloak/keycloak:26.1.1 start-dev
 ```
 ### 📊 Tracing (Zipkin)
-docker run -d -p 9411:9411 --name zipkin openzipkin/zipkin
+`docker run -d -p 9411:9411 --name zipkin openzipkin/zipkin`
 🔒 Security & Hardening
-Eureka Security: Discovery server protected with Basic Authentication.
+- Eureka Security: Discovery server protected with Basic Authentication.
 
-JWT Validation: API Gateway acts as an OAuth2 Resource Server, validating tokens against Keycloak.
+- JWT Validation: API Gateway acts as an OAuth2 Resource Server, validating tokens against Keycloak.
 📈 Learning Roadmap
-[x] Service Discovery: Netflix Eureka integration.
+- [x] Service Discovery: Netflix Eureka integration.
 
-[x] API Gateway: Routing & Security.
+- [x] API Gateway: Routing & Security.
 
-[x] Messaging: Asynchronous communication with Kafka.
+- [x] Messaging: Asynchronous communication with Kafka.
 
-[x] Tracing: Observability with Zipkin.
+- [x] Tracing: Observability with Zipkin.
 
-[ ] Containerization: Full Docker integration.
+- [ ] Containerization: Full Docker integration.
 
-[ ] Resilience: Circuit Breakers with Resilience4j.
+- [ ] Resilience: Circuit Breakers with Resilience4j.
 
 <h3 align="center">🤝 Developed with ❤️ by Kaung Htet Zaw</h3>
