@@ -14,62 +14,65 @@
 ## 📝 Project Overview
 This repository contains a full-scale **Microservices Architecture** developed using **Java Spring Boot**. The project demonstrates a production-ready ecosystem focusing on distributed systems, event-driven communication, and centralized security.
 
----
-
-## 🏗 Architecture Components
-
-* **API Gateway:** Entry point for all clients using **Spring Cloud Gateway**, integrated with Keycloak for OIDC security.
-* **Service Discovery:** **Netflix Eureka Server** (Secured) providing dynamic service registration and discovery.
-* **Identity Provider:** **Keycloak** (OAuth2/OpenID Connect) for centralized authentication and RBAC.
-* **Message Broker:** **Apache Kafka** & **Zookeeper** for asynchronous, event-driven service interaction.
-* **Observability:** Distributed tracing implemented via **Zipkin** and **Micrometer**.
-* **Database:** Decoupled **MySQL** instances for each service to maintain data sovereignty.
+### 🏗 Architecture Design
+<p align="center">
+  <img src="https://raw.githubusercontent.com/kaunghtetzaw139432/spring-boot-microservices-ecosystem/main/images/architecture.jpg" width="800" alt="Architecture Diagram">
+</p>
 
 ---
 
-## 🛠 Infrastructure & Local Setup
+## 🏗 Key Components & Monitoring
 
-### 1. Messaging Infrastructure
+### 1. Service Discovery (Eureka)
+All services are registered and managed via Netflix Eureka Server.
+<p align="center">
+  <img src="https://raw.githubusercontent.com/kaunghtetzaw139432/spring-boot-microservices-ecosystem/main/images/eureka.png" width="800" alt="Eureka Dashboard">
+</p>
+
+### 2. Identity Management (Keycloak)
+Centralized Authentication and Authorization using Keycloak OAuth2.
+<p align="center">
+  <img src="https://raw.githubusercontent.com/kaunghtetzaw139432/spring-boot-microservices-ecosystem/main/images/keycloak.jpg" width="600" alt="Keycloak Login">
+</p>
+
+### 3. API Testing & Verification
+Verified successful transactions (Order creation and Product retrieval) via API Gateway.
+<p align="center">
+  <img src="https://raw.githubusercontent.com/kaunghtetzaw139432/spring-boot-microservices-ecosystem/main/images/api_result.png" width="800" alt="API Testing">
+</p>
+
+---
+
+## 🛠 Infrastructure Setup
+
+### 📡 Kafka & Zookeeper
 ```bash
 docker-compose up -d
-
-2. Security (Keycloak Server)
-Run Keycloak as a standalone container for centralized authentication and authorization:
-
-Bash
+🔐 Keycloak Server
 docker run -d --name keycloak \
   -p 8080:8080 \
   -e KC_BOOTSTRAP_ADMIN_USERNAME=admin \
   -e KC_BOOTSTRAP_ADMIN_PASSWORD=admin \
   quay.io/keycloak/keycloak:26.1.1 start-dev
-3. Distributed Tracing (Zipkin)
-Run Zipkin to visualize and troubleshoot request latencies across services:
 
-Bash
+Tracing (Zipkin)
 docker run -d -p 9411:9411 --name zipkin openzipkin/zipkin
-🔒 Security & Hardening
-Eureka Security: The Discovery server is protected with Basic Authentication to prevent unauthorized service registration.
 
-JWT Validation: The API Gateway acts as an OAuth2 Resource Server, validating incoming Bearer tokens against the Keycloak realm.
+🔒 Security & Hardening
+.Eureka Security: Discovery server protected with Basic Authentication.
+
+.JWT Validation: API Gateway acts as an OAuth2 Resource Server.
 
 📈 Learning Roadmap
-[x] Service Discovery: Implemented with Netflix Eureka.
+.[x] Service Discovery: Netflix Eureka integration.
 
-[x] API Gateway: Routing and Security integration.
+.[x] API Gateway: Routing & Security.
 
-[x] Event-Driven Architecture: Messaging via Apache Kafka.
+.[x] Messaging: Asynchronous communication with Kafka.
 
-[x] Distributed Tracing: Observability with Zipkin.
+.[x] Tracing: Observability with Zipkin.
 
-[ ] Containerization: Moving all services to individual Docker images.
+.[ ] Containerization: Full Docker integration.
 
-[ ] Fault Tolerance: Implementing Resilience4j Circuit Breakers.
-
-[ ] DevOps: Building automated CI/CD pipelines.
-
-🤝 Contact & Contribution
-I am a Junior Backend Developer passionate about scalable architectures and cloud-native technologies. Feel free to reach out if you want to discuss Spring Boot, Microservices, or DevOps!
-
-<p align="center">
-<b>Developed with ❤️ by Kaung Htet Zaw</b>
-</p>
+.[ ] Resilience: Circuit Breakers with Resilience4j.
+<h3 align="center">🤝 Developed with ❤️ by Kaung Htet Zaw</h3>
