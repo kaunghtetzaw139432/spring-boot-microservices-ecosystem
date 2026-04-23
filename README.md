@@ -86,9 +86,10 @@ Verified successful transactions (Authentication, Order creation, and Product re
 ## 🛠 Infrastructure Setup
 
 ### 📡 Kafka & Zookeeper
-```bash
-docker-compose up -d
- `🔐 Keycloak Server`
+
+`docker-compose up -d`
+ 🔐 Keycloak Server
+ ```bash
 docker run -d --name keycloak \
   -p 8080:8080 \
   -e KC_BOOTSTRAP_ADMIN_USERNAME=admin \
@@ -96,7 +97,9 @@ docker run -d --name keycloak \
   quay.io/keycloak/keycloak:26.1.1 start-dev
 ```
 ### 📊 Tracing (Zipkin)
-`docker run -d -p 9411:9411 --name zipkin openzipkin/zipkin`
+ ```bash
+docker run -d -p 9411:9411 --name zipkin openzipkin/zipkin
+```
 🔒 Security & Hardening
 - Eureka Security: Discovery server protected with Basic Authentication.
 
