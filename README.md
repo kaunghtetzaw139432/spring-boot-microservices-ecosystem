@@ -27,7 +27,7 @@ This repository contains a full-scale **Microservices Architecture** developed u
 
 | Category | Technology |
 | :--- | :--- |
-| **Backend** | Java 17, Spring Boot 3.x, Spring Cloud |
+| **Backend** | Java 21, Spring Boot 3.x, Spring Cloud |
 | **Security** | Keycloak (OIDC/OAuth2), Spring Security |
 | **Messaging** | Apache Kafka, Zookeeper |
 | **Database** | MySQL (Relational), MongoDB (NoSQL) |
