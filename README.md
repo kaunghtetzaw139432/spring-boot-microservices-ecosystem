@@ -112,9 +112,11 @@ docker run -d -p 9411:9411 --name zipkin openzipkin/zipkin
 - [x] Messaging: Asynchronous communication with Kafka.
 
 - [x] Tracing: Observability with Zipkin.
+    
+- [x]Resilience: Circuit Breakers with Resilience4j.
 
 - [ ] Containerization: Full Docker integration.
 
-- [ ] Resilience: Circuit Breakers with Resilience4j.
+
 
 <h3 align="center">🤝 Developed with ❤️ by Kaung Htet Zaw</h3>
