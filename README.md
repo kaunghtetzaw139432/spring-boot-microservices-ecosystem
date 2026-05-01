@@ -113,7 +113,7 @@ docker run -d -p 9411:9411 --name zipkin openzipkin/zipkin
 
 - [x] Tracing: Observability with Zipkin.
     
-- [x]Resilience: Circuit Breakers with Resilience4j.
+- [x] Resilience: Circuit Breakers with Resilience4j.
 
 - [ ] Containerization: Full Docker integration.
 
