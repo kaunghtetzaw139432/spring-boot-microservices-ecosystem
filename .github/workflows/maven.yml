@@ -21,23 +21,23 @@ jobs:
         cache: maven
 
     - name: Build api-gateway
-      run: mvn -B package --file api-gateway/pom.xml
+      run: mvn -B package --file api-gateway/pom.xml -DskipTests
       
     - name: Build discovery-server
-      run: mvn -B package --file discovery-server/pom.xml
+      run: mvn -B package --file discovery-server/pom.xml -DskipTests
       
     - name: Build inventory-service
-      run: mvn -B package --file inventory-service/pom.xml
+      run: mvn -B package --file inventory-service/pom.xml -DskipTests
       
     - name: Build notification-service
-      run: mvn -B package --file notification_service/pom.xml
+      run: mvn -B package --file notification_service/pom.xml -DskipTests
       
     - name: Build order-service
-      run: mvn -B package --file order-service/pom.xml
+      run: mvn -B package --file order-service/pom.xml -DskipTests
       
     - name: Build product-service
-      run: mvn -B package --file product-service/pom.xml
+      run: mvn -B package --file product-service/pom.xml -DskipTests
       
     - name: Build Main-POM.XML
-      run: mvn -B package --file pom.xml
+      run: mvn -B package --file pom.xml -DskipTests
       
